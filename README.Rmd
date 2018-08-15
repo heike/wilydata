@@ -1,7 +1,7 @@
 ---
 title: "wilydata: the data for the book"
 author: "Dianne Cook, Heike Hofmann, Susan Vanderplas, Earo Wang"
-date: "August 15, 2018"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 output: 
   html_document:
     keep_md: true
@@ -12,10 +12,15 @@ output:
 [![packageversion](https://img.shields.io/badge/Package%20version-0.0.1-orange.svg?style=flat-square)](commits/master)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Travis-CI Build Status](https://travis-ci.org/heike/wilydata.svg?branch=master)](https://travis-ci.org/heike/wilydata)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2018--08--15-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
 [![Coverage status](https://codecov.io/gh/heike/wilydata/branch/master/graph/badge.svg)](https://codecov.io/github/heike/wilydata?branch=master)
 
-
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.path = "man/figures/")
+```
 
 
 # wilydata 
+
+For the available datasets, see `?data`
+Data scrapers are in `inst`
