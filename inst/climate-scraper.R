@@ -23,15 +23,35 @@ XXXX
 save(scripps_stations, file="data/scripps_stations.rda")
 
 ##############
+get_station_data <- function (stationURL, type = "daily_flask_co2", dataURL="http://scrippsco2.ucsd.edu") {
+  station_root <- read_html(stationURL)
+
+  table_urls <- station_root %>% html_nodes(".table-cell-borders a") %>% html_attr("href")
+  idx <- grep(type, table_urls)
+  if (length(idx) < 1) stop(sprintf("No measurements available for %s", type))
+  if (length(idx) > 1) stop(sprintf("Multiple measurement files available for '%s', specify: %s", type, paste(basename(table_urls[idx]), collapse = ", ")))
+
+  # now we only have one option, so let's download that file
+  data <- readr::read_csv(file.path(dataURL, table_urls[idx]), skip=69, col_names =FALSE)
+  rename(data,
+         date = "X1",
+         time = "X2",
+         excel.date = "X3",
+         num.year = "X4",
+         n = "X5",
+         flag = "X6",
+         co2 = "X7")
+}
+
+safe_load <- safely(get_station_data)
 
 station_url <- root %>% html_nodes(":nth-child(6) .rollover-links a") %>% html_attr("href")
 
-stationURL <- file.path(baseURL, station_url)
+scripps_data_co2 <- file.path(baseURL, station_url) %>%
+  purrr::map_df(.f = function(s) {
+    res <- safe_load(s, type="daily_flask_co2")
+    if (!is.null(res$result)) res$result$station_id <- basename(s)
+    res$result
+  })
 
-get_daily_flask <- function (stationURL, type = "co2") {
-  station_root <- read_html(stationURL)
-  tables <- station_root %>% html_table(fill=TRUE)
-
-  table_urls <- station_root %>% html_nodes(".table-cell-borders a") %>% html_attr("href")
-  length(tables)
-}
+save(scripps_data_co2, file="data/scripps_data_co2.rda")
