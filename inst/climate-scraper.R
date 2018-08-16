@@ -14,7 +14,19 @@ scripps_stations <- tables[[1]]
 
 # clean up station info
 
-XXXX
+scripps_stations <- scripps_stations %>%
+  mutate(  # remove degree character
+    Latitude = gsub("°", "", Latitude),
+    Longitude = gsub("°", "", Longitude),
+    dir_lat =  str_detect(Latitude, "S"),
+    dir_long =  str_detect(Longitude, "W")
+  ) %>%
+  mutate(
+    Latitude = parse_number(Latitude) * ifelse(dir_lat, -1, 1),
+    Longitude = parse_number(Longitude) * ifelse(dir_long, -1, 1),
+    Longitude = replace(Longitude, is.na(Longitude), 0)
+  ) %>%
+  select(- starts_with("dir"))
 
 
 
