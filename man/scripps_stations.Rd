@@ -12,6 +12,7 @@
   \item{longitude}{geographic longitude in degrees East.}
   \item{Elevation}{elevation above sea level in meters.}
   \item{Dates}{Period of active status.}
+  \item{Page}{URL of station information.}
 }}
 \usage{
 scripps_stations
