@@ -4,7 +4,7 @@
 \name{scripps_stations}
 \alias{scripps_stations}
 \title{Station information for the Scripps stations}
-\format{A data frame with 10 rows and 6 variables:
+\format{A data frame with 10 rows and 8 variables:
 \describe{
   \item{Station Name}{name of the station and country/state.}
   \item{Station Code}{three letter station abbreviation. }
@@ -13,6 +13,7 @@
   \item{Elevation}{elevation above sea level in meters.}
   \item{Dates}{Period of active status.}
   \item{Page}{URL of station information.}
+  \item{Accessed}{Date last accessed.}
 }}
 \usage{
 scripps_stations
