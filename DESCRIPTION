@@ -1,9 +1,14 @@
 Package: wilydata
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Collection of data sets scraped from the web
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Authors@R: c(person("Heike", "Hofmann", role = c("aut", "cre"),
+                      email = "hofmann@iastate.edu"),
+             person("Susan", "Vanderplas", email = "srvander@iastate.edu", role = "aut"),                      
+             person("Earo", "Wang", email = "earowang@monash.edu", role = "aut"),                      
+             person("Dianne", "Cook", email = "dicook@monash.edu", role = "aut")                      
+             )
+Maintainer: Heike Hofmann <hofmann@iastate.edu>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
