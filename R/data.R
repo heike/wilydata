@@ -33,3 +33,16 @@
 #' }
 #' @keywords data
 "scripps_data_co2"
+
+#' Minimum and Maximum Temperature in Ames, 2008 - present
+#' 
+#' Minimum and maximum temperature from weather stations in Ames, IA. Temperature values are in tenths of a degree celsius. 
+#' @format A data frame with 5 columns:
+#' \describe{
+#'   \item{id}{Station ID}
+#'   \item{date}{Date, in ymd format}
+#'   \item{tmax}{Maximum daily temperature, in tenths of a degree C}
+#'   \item{tmin}{Minimum daily temperature, in tenths of a degree C}
+#'   \item{Accessed}{Date last accessed.}
+#' }
+"ames_weather_api"
