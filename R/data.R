@@ -1,13 +1,14 @@
 
 #' Station information for the Scripps stations
 #'
-#' Information on all Scripps stations active on Aug 15 2018.
+#' Information on all active Scripps stations (on Accessed data, see data).
+#' The data is scraped from the Scripps Project at \url{http://scrippsco2.ucsd.edu/}.
 #' @format A data frame with 10 rows and 8 variables:
 #' \describe{
 #'   \item{Station Name}{name of the station and country/state.}
 #'   \item{Station Code}{three letter station abbreviation. }
 #'   \item{Latitude}{geographic latitude in degrees North.}
-#'   \item{longitude}{geographic longitude in degrees East.}
+#'   \item{Longitude}{geographic longitude in degrees East.}
 #'   \item{Elevation}{elevation above sea level in meters.}
 #'   \item{Dates}{Period of active status.}
 #'   \item{Page}{URL of station information.}
@@ -35,8 +36,8 @@
 "scripps_data_co2"
 
 #' Minimum and Maximum Temperature in Ames, 2008 - present
-#' 
-#' Minimum and maximum temperature from weather stations in Ames, IA. Temperature values are in tenths of a degree celsius. 
+#'
+#' Minimum and maximum temperature from weather stations in Ames, IA. Temperature values are in tenths of a degree celsius.
 #' @format A data frame with 5 columns:
 #' \describe{
 #'   \item{id}{Station ID}

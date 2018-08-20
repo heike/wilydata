@@ -9,7 +9,7 @@
   \item{Station Name}{name of the station and country/state.}
   \item{Station Code}{three letter station abbreviation. }
   \item{Latitude}{geographic latitude in degrees North.}
-  \item{longitude}{geographic longitude in degrees East.}
+  \item{Longitude}{geographic longitude in degrees East.}
   \item{Elevation}{elevation above sea level in meters.}
   \item{Dates}{Period of active status.}
   \item{Page}{URL of station information.}
